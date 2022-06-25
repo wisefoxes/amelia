@@ -2,6 +2,7 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
-    "eva": "libs/eva"
+    "eva": "libs/eva",
+    "eva-e2e": "apps/eva-e2e"
   }
 }
