@@ -1,9 +1,10 @@
 import { Meta } from '@storybook/react';
-import { Button } from "./Button";
+import React from 'react';
+import { Button } from './Button';
 
 export default {
   component: Button,
   title: 'Atoms/Button',
 } as Meta;
 
-export const Default = () => <Button>Button</Button>
+export const Default: React.FC = () => <Button>Button</Button>;

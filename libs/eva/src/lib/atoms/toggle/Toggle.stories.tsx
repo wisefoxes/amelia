@@ -1,9 +1,10 @@
+import React from 'react';
 import { Meta } from '@storybook/react';
-import { Toggle } from "./Toggle";
+import { Toggle } from './Toggle';
 
 export default {
   component: Toggle,
   title: 'Atoms/Toggle',
 } as Meta;
 
-export const Default = () => <Toggle />;
+export const Default: React.FC = () => <Toggle />;

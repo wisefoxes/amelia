@@ -1,5 +1,5 @@
-import React from "react";
+import React from 'react'
 
 export const Input: React.FC = () => {
-  return <input type="text" />
+	return <input type="text" />
 }
