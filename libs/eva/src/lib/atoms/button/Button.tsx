@@ -29,10 +29,10 @@ export const Button: React.FC<Props> = (props) => {
 			// filled
 			'bg-gray-100 hover:bg-gray-200 active:bg-gray-300': color === 'basic' && variant === 'filled',
 			'text-white bg-blue-500 hover:bg-blue-600 active:bg-blue-700': color === 'primary' && variant === 'filled',
-			'text-white bg-green-500 hover:bg-green-600 active:bg-green-700': color === 'success',
-			'text-white bg-sky-500 hover:bg-sky-600 active:bg-sky-700': color === 'info',
-			'text-white bg-orange-500 hover:bg-orange-600 active:bg-orange-700': color === 'warning',
-			'text-white bg-red-500 hover:bg-red-600 active:bg-red-700': color === 'danger',
+			'text-white bg-green-500 hover:bg-green-600 active:bg-green-700': color === 'success' && variant === 'filled',
+			'text-white bg-sky-500 hover:bg-sky-600 active:bg-sky-700': color === 'info' && variant === 'filled',
+			'text-white bg-amber-500 hover:bg-amber-600 active:bg-amber-700': color === 'warning' && variant === 'filled',
+			'text-white bg-red-500 hover:bg-red-600 active:bg-red-700': color === 'danger' && variant === 'filled',
 
 			// outline
 			border: variant === 'outline',
@@ -44,10 +44,19 @@ export const Button: React.FC<Props> = (props) => {
 				color === 'success' && variant === 'outline',
 			'border-sky-400 text-sky-400 bg-sky-400/[.08] hover:border-sky-500 hover:text-sky-500 hover:bg-sky-500/[.08] active:border-sky-600 active:text-sky-600 active:bg-sky-600/[.08]':
 				color === 'info' && variant === 'outline',
-			'border-orange-400 text-orange-400 bg-orange-400/[.08] hover:border-orange-500 hover:text-orange-500 hover:bg-orange-500/[.08] active:border-orange-600 active:text-orange-600 active:bg-orange-600/[.08]':
+			'border-amber-400 text-amber-400 bg-amber-400/[.08] hover:border-amber-500 hover:text-amber-500 hover:bg-amber-500/[.08] active:border-amber-600 active:text-amber-600 active:bg-amber-600/[.08]':
 				color === 'warning' && variant === 'outline',
 			'border-red-400 text-red-400 bg-red-400/[.08] hover:border-red-500 hover:text-red-500 hover:bg-red-500/[.08] active:border-red-600 active:text-red-600 active:bg-red-600/[.08]':
 				color === 'danger' && variant === 'outline',
+
+			// ghost
+			'bg-transparent capitalize': variant === 'ghost',
+			'hover:bg-gray-100 active:bg-gray-200': color === 'basic' && variant === 'ghost',
+			'text-blue-500 hover:bg-blue-100 active:bg-blue-200': color === 'primary' && variant === 'ghost',
+			'text-green-500 hover:bg-green-100 active:bg-green-200': color === 'success' && variant === 'ghost',
+			'text-sky-500 hover:bg-sky-100 active:bg-sky-200': color === 'info' && variant === 'ghost',
+			'text-amber-500 hover:bg-amber-100 active:bg-amber-200': color === 'warning' && variant === 'ghost',
+			'text-red-500 hover:bg-red-100 active:bg-red-200': color === 'danger' && variant === 'ghost',
 		},
 		className,
 	)

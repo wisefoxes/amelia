@@ -38,3 +38,8 @@ export const Outline = Template.bind({})
 Outline.args = {
 	variant: 'outline',
 }
+
+export const Ghost = Template.bind({})
+Ghost.args = {
+	variant: 'ghost',
+}
