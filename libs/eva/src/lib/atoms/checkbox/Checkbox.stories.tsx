@@ -1,10 +1,10 @@
-import React from 'react';
-import { Meta } from '@storybook/react';
-import { Checkbox } from './Checkbox';
+import React from 'react'
+import { Meta } from '@storybook/react'
+import { Checkbox } from './Checkbox'
 
 export default {
-  component: Checkbox,
-  title: 'Atoms/Checkbox',
-} as Meta;
+	component: Checkbox,
+	title: 'Atoms/Checkbox',
+} as Meta
 
-export const Default: React.FC = () => <Checkbox />;
+export const Default: React.FC = () => <Checkbox />

@@ -1,5 +1,5 @@
-import React from 'react';
+import React from 'react'
 
 export const Radio: React.FC = () => {
-  return <input type="radio" />;
-};
+	return <input type="radio" />
+}
