@@ -18,13 +18,29 @@
               }
             ]
           }
-        ]
+        ],
+        "no-empty": "error",
+        "no-unused-vars": "error",
+        "curly": [
+          "error",
+          "all"
+        ],
+        "lines-between-class-members": [
+          "error",
+          "always",
+          {
+            "exceptAfterSingleLine": true
+          }
+        ],
+        "newline-after-var": "error",
+        "func-style": ["error", "declaration", { "allowArrowFunctions": true }]
       }
     },
     {
       "files": ["*.ts", "*.tsx"],
       "extends": ["plugin:@nrwl/nx/typescript"],
-      "rules": {}
+      "rules": {
+      }
     },
     {
       "files": ["*.js", "*.jsx"],
