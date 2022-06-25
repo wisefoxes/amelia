@@ -1,10 +1,27 @@
-import { Meta } from '@storybook/react'
-import React from 'react'
+import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { Button } from './Button'
 
 export default {
 	component: Button,
 	title: 'Atoms/Button',
-} as Meta
+	argTypes: {
+		size: {
+			control: 'select',
+			options: ['giant', 'large', 'medium', 'small', 'tiny'],
+			defaultValue: 'medium',
+		},
+		kind: {
+			control: 'select',
+			options: ['basic', 'primary', 'success', 'info', 'warning', 'danger'],
+			defaultValue: 'basic',
+		},
+	},
+} as ComponentMeta<typeof Button>
 
-export const Default: React.FC = () => <Button>Button</Button>
+const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />
+
+export const Filled = Template.bind({})
+
+Filled.args = {
+	children: 'Button',
+}
