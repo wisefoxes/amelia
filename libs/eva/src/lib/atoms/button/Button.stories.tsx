@@ -10,10 +10,19 @@ export default {
 			options: ['giant', 'large', 'medium', 'small', 'tiny'],
 			defaultValue: 'medium',
 		},
-		kind: {
+		color: {
 			control: 'select',
 			options: ['basic', 'primary', 'success', 'info', 'warning', 'danger'],
 			defaultValue: 'basic',
+		},
+		children: {
+			control: 'text',
+			defaultValue: 'Button',
+		},
+		variant: {
+			table: {
+				disable: true,
+			},
 		},
 	},
 } as ComponentMeta<typeof Button>
@@ -21,7 +30,11 @@ export default {
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />
 
 export const Filled = Template.bind({})
-
 Filled.args = {
-	children: 'Button',
+	variant: 'filled',
+}
+
+export const Outline = Template.bind({})
+Outline.args = {
+	variant: 'outline',
 }
