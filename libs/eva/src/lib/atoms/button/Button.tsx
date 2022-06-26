@@ -6,10 +6,11 @@ type Props = React.HTMLAttributes<HTMLButtonElement> & {
 	color?: 'basic' | 'primary' | 'success' | 'info' | 'warning' | 'danger'
 	variant?: 'filled' | 'outline' | 'ghost'
 	className?: string
+	disabled?: boolean
 }
 
 export const Button: React.FC<Props> = (props) => {
-	const { size = 'medium', color = 'basic', variant = 'filled', children, className, ...restProps } = props
+	const { size = 'medium', color = 'basic', variant = 'filled', className, children, ...restProps } = props
 
 	const classNames = cn(
 		'font-bold',
@@ -17,7 +18,11 @@ export const Button: React.FC<Props> = (props) => {
 		'text-base',
 		'text-slate-900',
 		'rounded',
+		'border',
 		'transition',
+		'outline-none',
+		'focus:shadow-btn-outer',
+		'disabled:bg-basic-600/[0.24] disabled:border-basic-600/[0.24] disabled:text-basic-600/[0.48] disabled:cursor-not-allowed',
 		{
 			// sizing
 			'px-3.5 py-1.5 text-xs': size === 'tiny',
@@ -27,36 +32,42 @@ export const Button: React.FC<Props> = (props) => {
 			'px-6 py-4 text-xl': size === 'giant',
 
 			// filled
-			'bg-gray-100 hover:bg-gray-200 active:bg-gray-300': color === 'basic' && variant === 'filled',
-			'text-white bg-blue-500 hover:bg-blue-600 active:bg-blue-700': color === 'primary' && variant === 'filled',
-			'text-white bg-green-500 hover:bg-green-600 active:bg-green-700': color === 'success' && variant === 'filled',
-			'text-white bg-sky-500 hover:bg-sky-600 active:bg-sky-700': color === 'info' && variant === 'filled',
-			'text-white bg-amber-500 hover:bg-amber-600 active:bg-amber-700': color === 'warning' && variant === 'filled',
-			'text-white bg-red-500 hover:bg-red-600 active:bg-red-700': color === 'danger' && variant === 'filled',
+			'border-basic bg-basic hover:bg-basic-200 hover:border-basic-200 active:bg-basic-400 focus:bg-basic-400 focus:border-basic-500 focus:hover:bg-basic-200 focus:hover:border-basic-200 focus:hover:active:bg-basic-400 focus:hover:active:border-basic-400':
+				color === 'basic' && variant === 'filled',
+			'text-basic-100 border-primary bg-primary hover:bg-primary-400 hover:border-primary-400 active:bg-primary-600 focus:bg-primary-600 focus:border-primary-700 focus:hover:bg-primary-400 focus:hover:border-primary-400 focus:hover:active:bg-primary-600 focus:hover:active:border-primary-700':
+				color === 'primary' && variant === 'filled',
+			'text-basic-100 border-success bg-success hover:bg-success-400 hover:border-success-400 active:bg-success-600 focus:bg-success-600 focus:border-success-700 focus:hover:bg-success-400 focus:hover:border-success-400 focus:hover:active:bg-success-600 focus:hover:active:border-success-700':
+				color === 'success' && variant === 'filled',
+			'text-basic-100 border-info bg-info hover:bg-info-400 hover:border-info-400 active:bg-info-600 focus:bg-info-600 focus:border-info-700 focus:hover:bg-info-400 focus:hover:border-info-400 focus:hover:active:bg-info-600 focus:hover:active:border-info-700':
+				color === 'info' && variant === 'filled',
+			'text-basic-100 border-warning bg-warning hover:bg-warning-400 hover:border-warning-400 active:bg-warning-600 focus:bg-warning-600 focus:border-warning-700 focus:hover:bg-warning-400 focus:hover:border-warning-400 focus:hover:active:bg-warning-600 focus:hover:active:border-warning-700':
+				color === 'warning' && variant === 'filled',
+			'text-basic-100 border-danger bg-danger hover:bg-danger-400 hover:border-danger-400 active:bg-danger-600 focus:bg-danger-600 focus:border-danger-700 focus:hover:bg-danger-400 focus:hover:border-danger-400 focus:hover:active:bg-danger-600 focus:hover:active:border-danger-700':
+				color === 'danger' && variant === 'filled',
 
 			// outline
-			border: variant === 'outline',
-			'border-gray-400 text-gray-400 bg-gray-400/[.08] hover:border-gray-500 hover:text-gray-500 hover:bg-gray-500/[.08] active:border-gray-600 active:text-gray-600 active:bg-gray-600/[.08]':
+			'border focus:shadow-btn-outer-inner': variant === 'outline',
+			'text-basic-600 border-basic-600 bg-basic-600/[.08] hover:bg-basic-600/[.16] active:bg-basic/[.24] focus:bg-basic/[.24] focus:hover:bg-basic-600/[.16] focus:hover:shadow-btn-outer focus:active:shadow-btn-outer-inner':
 				color === 'basic' && variant === 'outline',
-			'border-blue-400 text-blue-400 bg-blue-400/[.08] hover:border-blue-500 hover:text-blue-500 hover:bg-blue-500/[.08] active:border-blue-600 active:text-blue-600 active:bg-blue-600/[.08]':
+			'text-primary border-primary bg-primary/[.08] hover:bg-primary/[.16] active:bg-primary/[.24] focus:bg-primary/[.24] focus:hover:bg-primary/[.16] focus:hover:shadow-btn-outer focus:active:shadow-btn-outer-inner':
 				color === 'primary' && variant === 'outline',
-			'border-green-400 text-green-400 bg-green-400/[.08] hover:border-green-500 hover:text-green-500 hover:bg-green-500/[.08] active:border-green-600 active:text-green-600 active:bg-green-600/[.08]':
+			'text-success border-success bg-success/[.08] hover:bg-success/[.16] active:bg-success/[.24] focus:bg-success/[.24] focus:hover:bg-success/[.16] focus:hover:shadow-btn-outer focus:active:shadow-btn-outer-inner':
 				color === 'success' && variant === 'outline',
-			'border-sky-400 text-sky-400 bg-sky-400/[.08] hover:border-sky-500 hover:text-sky-500 hover:bg-sky-500/[.08] active:border-sky-600 active:text-sky-600 active:bg-sky-600/[.08]':
+			'text-info border-info bg-info/[.08] hover:bg-info/[.16] active:bg-info/[.24] focus:bg-info/[.24] focus:hover:bg-info/[.16] focus:hover:shadow-btn-outer focus:active:shadow-btn-outer-inner':
 				color === 'info' && variant === 'outline',
-			'border-amber-400 text-amber-400 bg-amber-400/[.08] hover:border-amber-500 hover:text-amber-500 hover:bg-amber-500/[.08] active:border-amber-600 active:text-amber-600 active:bg-amber-600/[.08]':
+			'text-warning border-warning bg-warning/[.08] hover:bg-warning/[.16] active:bg-warning/[.24] focus:bg-warning/[.24] focus:hover:bg-warning/[.16] focus:hover:shadow-btn-outer focus:active:shadow-btn-outer-inner':
 				color === 'warning' && variant === 'outline',
-			'border-red-400 text-red-400 bg-red-400/[.08] hover:border-red-500 hover:text-red-500 hover:bg-red-500/[.08] active:border-red-600 active:text-red-600 active:bg-red-600/[.08]':
+			'text-danger border-danger bg-danger/[.08] hover:bg-danger/[.16] active:bg-danger/[.24] focus:bg-danger/[.24] focus:hover:bg-danger/[.16] focus:hover:shadow-btn-outer focus:active:shadow-btn-outer-inner':
 				color === 'danger' && variant === 'outline',
 
 			// ghost
-			'bg-transparent capitalize': variant === 'ghost',
-			'hover:bg-gray-100 active:bg-gray-200': color === 'basic' && variant === 'ghost',
-			'text-blue-500 hover:bg-blue-100 active:bg-blue-200': color === 'primary' && variant === 'ghost',
-			'text-green-500 hover:bg-green-100 active:bg-green-200': color === 'success' && variant === 'ghost',
-			'text-sky-500 hover:bg-sky-100 active:bg-sky-200': color === 'info' && variant === 'ghost',
-			'text-amber-500 hover:bg-amber-100 active:bg-amber-200': color === 'warning' && variant === 'ghost',
-			'text-red-500 hover:bg-red-100 active:bg-red-200': color === 'danger' && variant === 'ghost',
+			'bg-transparent border-transparent hover:bg-basic-600/[.08] active:bg-basic-600/[.16] active:border-basic-600/[.16] focus:shadow-btn-outer-inner focus:border-basic-600/[.4] focus:bg-basic-600/[.16] focus:hover:shadow-btn-outer focus:hover:bg-basic-600/[.08] focus:hover:border-basic-600/[.08] active:focus:shadow-btn-outer-inner':
+				variant === 'ghost',
+			'text-primary': color === 'primary' && variant === 'ghost',
+			'text-success': color === 'success' && variant === 'ghost',
+			'text-info': color === 'info' && variant === 'ghost',
+			'text-warning': color === 'warning' && variant === 'ghost',
+			'text-danger': color === 'danger' && variant === 'ghost',
 		},
 		className,
 	)
