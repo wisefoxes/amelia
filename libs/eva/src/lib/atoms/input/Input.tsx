@@ -12,7 +12,7 @@ type Props = React.HTMLAttributes<HTMLInputElement> & {
 export const Input: React.FC<Props> = (props) => {
 	const { color = 'basic', size = 'medium', className = '', ...restProps } = props
 	const classNames = cn(
-		'border rounded outline-none border-basic-400 leading-5 transition font-semibold text-basic-800 bg-basic-200 placeholder-basic-600 placeholder:font-normal placeholder:text-ellipsis disabled:border-basic-400 disabled:bg-basic-200 disabled:text-basic-600/[.48] disabled:placeholder-basic-600/[.48] disabled:cursor-not-allowed',
+		'block w-full border rounded outline-none border-basic-400 leading-5 transition font-semibold text-basic-800 bg-basic-200 placeholder-basic-600 placeholder:font-normal placeholder:text-ellipsis disabled:border-basic-400 disabled:bg-basic-200 disabled:text-basic-600/[.48] disabled:placeholder-basic-600/[.48] disabled:cursor-not-allowed',
 		{
 			'px-4 py-0.5 text-sm': size === 'small',
 			'px-4 py-2 text-base': size === 'medium',
