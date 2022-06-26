@@ -15,6 +15,10 @@ export default {
 			control: 'boolean',
 			defaultValue: false,
 		},
+		disabled: {
+			control: 'boolean',
+			defaultValue: false,
+		},
 	},
 } as ComponentMeta<typeof Checkbox>
 
