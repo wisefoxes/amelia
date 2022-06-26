@@ -21,7 +21,7 @@ export const Button: React.FC<Props> = (props) => {
 		'border',
 		'transition',
 		'outline-none',
-		'focus:shadow-btn-outer',
+		'focus:shadow-ctrl-outer',
 		'disabled:bg-basic-600/[0.24] disabled:border-basic-600/[0.24] disabled:text-basic-600/[0.48] disabled:cursor-not-allowed',
 		{
 			// sizing
@@ -46,22 +46,22 @@ export const Button: React.FC<Props> = (props) => {
 				color === 'danger' && variant === 'filled',
 
 			// outline
-			'border focus:shadow-btn-outer-inner': variant === 'outline',
-			'text-basic-600 border-basic-600 bg-basic-600/[.08] hover:bg-basic-600/[.16] active:bg-basic/[.24] focus:bg-basic/[.24] focus:hover:bg-basic-600/[.16] focus:hover:shadow-btn-outer focus:active:shadow-btn-outer-inner':
+			'border focus:shadow-ctrl-both': variant === 'outline',
+			'text-basic-600 border-basic-600 bg-basic-600/[.08] hover:bg-basic-600/[.16] active:bg-basic/[.24] focus:bg-basic/[.24] focus:hover:bg-basic-600/[.16] focus:hover:shadow-ctrl-outer focus:active:shadow-ctrl-both':
 				color === 'basic' && variant === 'outline',
-			'text-primary border-primary bg-primary/[.08] hover:bg-primary/[.16] active:bg-primary/[.24] focus:bg-primary/[.24] focus:hover:bg-primary/[.16] focus:hover:shadow-btn-outer focus:active:shadow-btn-outer-inner':
+			'text-primary border-primary bg-primary/[.08] hover:bg-primary/[.16] active:bg-primary/[.24] focus:bg-primary/[.24] focus:hover:bg-primary/[.16] focus:hover:shadow-ctrl-outer focus:active:shadow-ctrl-both':
 				color === 'primary' && variant === 'outline',
-			'text-success border-success bg-success/[.08] hover:bg-success/[.16] active:bg-success/[.24] focus:bg-success/[.24] focus:hover:bg-success/[.16] focus:hover:shadow-btn-outer focus:active:shadow-btn-outer-inner':
+			'text-success border-success bg-success/[.08] hover:bg-success/[.16] active:bg-success/[.24] focus:bg-success/[.24] focus:hover:bg-success/[.16] focus:hover:shadow-ctrl-outer focus:active:shadow-ctrl-both':
 				color === 'success' && variant === 'outline',
-			'text-info border-info bg-info/[.08] hover:bg-info/[.16] active:bg-info/[.24] focus:bg-info/[.24] focus:hover:bg-info/[.16] focus:hover:shadow-btn-outer focus:active:shadow-btn-outer-inner':
+			'text-info border-info bg-info/[.08] hover:bg-info/[.16] active:bg-info/[.24] focus:bg-info/[.24] focus:hover:bg-info/[.16] focus:hover:shadow-ctrl-outer focus:active:shadow-ctrl-both':
 				color === 'info' && variant === 'outline',
-			'text-warning border-warning bg-warning/[.08] hover:bg-warning/[.16] active:bg-warning/[.24] focus:bg-warning/[.24] focus:hover:bg-warning/[.16] focus:hover:shadow-btn-outer focus:active:shadow-btn-outer-inner':
+			'text-warning border-warning bg-warning/[.08] hover:bg-warning/[.16] active:bg-warning/[.24] focus:bg-warning/[.24] focus:hover:bg-warning/[.16] focus:hover:shadow-ctrl-outer focus:active:shadow-ctrl-both':
 				color === 'warning' && variant === 'outline',
-			'text-danger border-danger bg-danger/[.08] hover:bg-danger/[.16] active:bg-danger/[.24] focus:bg-danger/[.24] focus:hover:bg-danger/[.16] focus:hover:shadow-btn-outer focus:active:shadow-btn-outer-inner':
+			'text-danger border-danger bg-danger/[.08] hover:bg-danger/[.16] active:bg-danger/[.24] focus:bg-danger/[.24] focus:hover:bg-danger/[.16] focus:hover:shadow-ctrl-outer focus:active:shadow-ctrl-both':
 				color === 'danger' && variant === 'outline',
 
 			// ghost
-			'bg-transparent border-transparent hover:bg-basic-600/[.08] active:bg-basic-600/[.16] active:border-basic-600/[.16] focus:shadow-btn-outer-inner focus:border-basic-600/[.4] focus:bg-basic-600/[.16] focus:hover:shadow-btn-outer focus:hover:bg-basic-600/[.08] focus:hover:border-basic-600/[.08] active:focus:shadow-btn-outer-inner':
+			'bg-transparent border-transparent hover:bg-basic-600/[.08] active:bg-basic-600/[.16] active:border-basic-600/[.16] focus:shadow-ctrl-both focus:border-basic-600/[.4] focus:bg-basic-600/[.16] focus:hover:shadow-ctrl-outer focus:hover:bg-basic-600/[.08] focus:hover:border-basic-600/[.08] active:focus:shadow-ctrl-both':
 				variant === 'ghost',
 			'text-primary': color === 'primary' && variant === 'ghost',
 			'text-success': color === 'success' && variant === 'ghost',

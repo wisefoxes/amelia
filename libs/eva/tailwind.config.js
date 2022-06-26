@@ -97,15 +97,14 @@ module.exports = {
 			xl: ['18px', '24px'],
 			DEFAULT: ['14px', '16px'],
 		},
-		boxShadow: {
-			...defaultTheme.boxShadow,
-			'btn-outer': '0 0 0 6px rgb(143 155 179 / 16%)',
-			'btn-outer-inner': '0 0 0 6px rgb(143 155 179 / 16%), inset 0 0 0 100vmax rgb(143 155 179 / 16%)',
-		},
 		extend: {
 			backgroundImage: {
 				check:
 					"url(\"data:image/svg+xml,%3Csvg viewBox='0 0 8 8' width='8' height='8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M6.039 1.43a1.11 1.11 0 0 1 1.517-.228c.483.342.588.998.234 1.466L4.431 7.1a1 1 0 0 1-1.492.115L.317 4.677a1.023 1.023 0 0 1 .002-1.483 1.113 1.113 0 0 1 1.535.002l1.641 1.59L6.04 1.428Z' fill='%23fff' /%3E%3C/svg%3E%0A\")",
+			},
+			boxShadow: {
+				'ctrl-outer': '0 0 0 6px rgba(143,155,179,0.16)',
+				'ctrl-both': '0 0 0 6px rgba(143,155,179,0.16), inset 0 0 0 100vmax rgba(143,155,179,0.16)',
 			},
 		},
 	},
