@@ -32,7 +32,7 @@ export const Checkbox: React.FC<Props> = (props) => {
 		<label className="flex items-center cursor-pointer text-basic-800 text-sm font-semibold">
 			<input type="checkbox" checked={checked} disabled={disabled} className="sr-only peer" />
 			<span className={boxClassNames} />
-			<span className="pl-7">{children}</span>
+			<span className="pl-7 leading-5">{children}</span>
 		</label>
 	)
 }

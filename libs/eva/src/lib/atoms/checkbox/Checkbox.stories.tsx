@@ -19,10 +19,14 @@ export default {
 			control: 'boolean',
 			defaultValue: false,
 		},
+		children: {
+			control: 'text',
+			defaultValue: 'Checkbox',
+		},
 	},
 } as ComponentMeta<typeof Checkbox>
 
-const Template: ComponentStory<typeof Checkbox> = (args) => <Checkbox {...args}>Checkbox label</Checkbox>
+const Template: ComponentStory<typeof Checkbox> = (args) => <Checkbox {...args} />
 
 export const Default = Template.bind({})
 Default.args = {}
