@@ -1,6 +1,5 @@
 const { join } = require('path')
 const { createGlobPatternsForDependencies } = require('@nrwl/react/tailwind')
-const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
 	content: [

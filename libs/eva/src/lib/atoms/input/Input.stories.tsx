@@ -14,6 +14,20 @@ export default {
 			options: ['text', 'password'],
 			defaultValue: 'text',
 		},
+		color: {
+			control: 'select',
+			options: ['basic', 'primary', 'success', 'info', 'warning', 'danger'],
+			defaultValue: 'basic',
+		},
+		size: {
+			control: 'select',
+			options: ['small', 'medium', 'large'],
+			defaultValue: 'medium',
+		},
+		disabled: {
+			control: 'boolean',
+			defaultValue: false,
+		},
 	},
 } as ComponentMeta<typeof Input>
 
