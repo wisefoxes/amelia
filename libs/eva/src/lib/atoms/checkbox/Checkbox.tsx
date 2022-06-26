@@ -8,10 +8,10 @@ type Props = React.HTMLAttributes<HTMLInputElement> & {
 }
 
 export const Checkbox: React.FC<Props> = (props) => {
-	const { color = 'basic', checked = false, disabled = false } = props
+	const { color = 'basic', checked = false, disabled = false, children } = props
 
-	const classNames = cn(
-		'border w-5 h-5 rounded-[3px] cursor-pointer transition flex justify-center items-center peer-checked:bg-check bg-center bg-no-repeat peer-focus:shadow-ctrl-both peer-disabled:bg-basic-600/[.08] peer-disabled:border-basic-600/[.48] peer-checked:peer-disabled:bg-basic-600/[.48] peer-disabled:hover:border-basic-600/[.48] peer-disabled:cursor-not-allowed',
+	const boxClassNames = cn(
+		'absolute border w-5 h-5 rounded-[3px] transition flex justify-center items-center peer-checked:bg-check bg-center bg-no-repeat peer-focus:shadow-ctrl-both peer-disabled:bg-basic-600/[.08] peer-disabled:border-basic-600/[.48] peer-checked:peer-disabled:bg-basic-600/[.48] peer-disabled:hover:border-basic-600/[.48] peer-disabled:cursor-not-allowed',
 		{
 			'border-basic-500 bg-basic-600/[.08] peer-focus:border-basic-600 peer-focus:bg-basic-600/[.24] peer-focus:hover:bg-basic-600/[.08] hover:border-primary hover:bg-primary/[.16] peer-checked:bg-primary peer-checked:border-primary peer-checked:hover:bg-primary-400 peer-checked:hover:border-primary-400 peer-checked:peer-active:bg-primary-600 peer-checked:peer-active:border-primary-600 peer-checked:peer-focus:bg-primary-600 peer-checked:peer-focus:border-primary-700':
 				color === 'basic',
@@ -29,9 +29,10 @@ export const Checkbox: React.FC<Props> = (props) => {
 	)
 
 	return (
-		<label>
+		<label className="flex items-center cursor-pointer text-basic-800 text-sm font-semibold">
 			<input type="checkbox" checked={checked} disabled={disabled} className="sr-only peer" />
-			<span className={classNames} />
+			<span className={boxClassNames} />
+			<span className="pl-7">{children}</span>
 		</label>
 	)
 }
