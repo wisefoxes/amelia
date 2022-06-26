@@ -1,10 +1,22 @@
-import React from 'react'
-import { Meta } from '@storybook/react'
+import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { Input } from './Input'
 
 export default {
 	component: Input,
 	title: 'Atoms/Input',
-} as Meta
+	argTypes: {
+		placeholder: {
+			control: 'text',
+			defaultValue: 'Placeholder',
+		},
+		type: {
+			control: 'select',
+			options: ['text', 'password'],
+			defaultValue: 'text',
+		},
+	},
+} as ComponentMeta<typeof Input>
 
-export const Default: React.FC = () => <Input />
+const Template: ComponentStory<typeof Input> = (args) => <Input {...args} />
+
+export const Default = Template.bind({})
