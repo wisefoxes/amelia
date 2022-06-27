@@ -1,10 +1,27 @@
 import React from 'react'
-import { Meta } from '@storybook/react'
+import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { Toggle } from './Toggle'
 
 export default {
 	component: Toggle,
 	title: 'Atoms/Toggle',
-} as Meta
+	argTypes: {
+		color: {
+			control: 'select',
+			options: ['basic', 'primary', 'success', 'info', 'warning', 'danger'],
+			defaultValue: 'basic',
+		},
+		checked: {
+			control: 'boolean',
+			defaultValue: false,
+		},
+		disabled: {
+			control: 'boolean',
+			defaultValue: false,
+		},
+	},
+} as ComponentMeta<typeof Toggle>
 
-export const Default: React.FC = () => <Toggle />
+const Template: ComponentStory<typeof Toggle> = (args) => <Toggle {...args} />
+
+export const Default = Template.bind({})
