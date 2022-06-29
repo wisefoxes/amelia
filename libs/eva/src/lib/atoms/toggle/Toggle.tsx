@@ -15,7 +15,8 @@ export const Toggle: React.FC<Props> = (props) => {
 	const outerOvalClasses = cn(
 		'transition block relative w-14 h-8 border border-basic-500 rounded-full peer-focus:border-basic-600 peer-focus:bg-basic-600/[.4] peer-focus:shadow-ctrl-outer-sm',
 		{
-			'bg-basic-600/[.16] hover:shadow-ctrl-outer-sm hover:border-primary hover:bg-primary/[.16]': color === 'basic',
+			'bg-basic-600/[.16] group-hover:shadow-ctrl-outer-sm group-hover:border-primary group-hover:bg-primary/[.16]':
+				color === 'basic',
 		},
 	)
 	const innerOvalClasses = cn(
@@ -23,7 +24,7 @@ export const Toggle: React.FC<Props> = (props) => {
 	)
 
 	return (
-		<label className="relative cursor-pointer">
+		<label className="relative cursor-pointer group">
 			<input type="checkbox" className={inputClasses} {...restProps} />
 			<span className={outerOvalClasses} />
 			<span className={innerOvalClasses} />
